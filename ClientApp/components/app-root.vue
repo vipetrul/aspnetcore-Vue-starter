@@ -13,12 +13,12 @@
 
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
-import CounterExample from './counter-example'
-import FetchData from './fetch-data'
-import HomePage from './home-page'
-import NavMenu from './nav-menu'
+import CounterExample from './counter-example.vue'
+import FetchData from './fetch-data.vue'
+import HomePage from './home-page.vue'
+import NavMenu from './nav-menu.vue'
 
 Vue.component('counter-example', CounterExample);
 Vue.component('fetch-data', FetchData);

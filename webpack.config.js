@@ -7,9 +7,9 @@ module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
     return [{
         stats: { modules: false },
-        entry: { 'main': './ClientApp/boot-app.js' },
+        entry: { 'main': './ClientApp/boot-app.ts' },
         resolve: {
-            extensions: ['.js', '.vue'],
+            extensions: ['.ts','.js', '.vue'],
             alias: {
                 'vue$': 'vue/dist/vue',
                 'components': path.resolve(__dirname, './ClientApp/components'),
@@ -26,7 +26,10 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.vue$/, include: /ClientApp/, use: 'vue-loader' },
-                { test: /\.js$/, include: /ClientApp/, use: 'babel-loader' },
+                {
+                    test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/,
+                    options: { appendTsSuffixTo: [/\.vue$/], }
+                },
                 { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : ExtractTextPlugin.extract({ use: 'css-loader' }) },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
