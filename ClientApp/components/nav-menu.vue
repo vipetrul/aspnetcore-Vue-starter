@@ -27,10 +27,11 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { routes } from '../routes'
 
-export default {
+export default Vue.extend ({
     data() {
         return {
             routes,
@@ -38,11 +39,11 @@ export default {
         }
     },
     methods: {
-        toggleCollapsed: function(event){
+        toggleCollapsed: function(event:any){
             this.collapsed = !this.collapsed;
         }
     }
-}
+})
 </script>
 
 <style>

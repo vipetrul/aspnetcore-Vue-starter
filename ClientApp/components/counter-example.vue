@@ -16,20 +16,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+  import Vue from 'vue'
   import { mapActions, mapState } from 'vuex'
+  import { MyState } from '../store/types'
 
-  export default {
+  export default Vue.extend({
   data() {
-  return {
-  autoCount: 0,
-  }
+    return  {
+            autoCount: 0
+            }
   },
 
   computed: {
-  ...mapState({
-  currentCount: state => state.counter
-  })
+   ...mapState({
+   currentCount: (state:MyState) => state.counter
+   })
   },
 
   methods: {
@@ -50,7 +52,7 @@
   this.autoCount += 1
   }, 1000)
   }
-  }
+  })
 </script>
 
 <style>

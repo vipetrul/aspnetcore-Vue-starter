@@ -29,8 +29,10 @@
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend( {
     data() {
         return {
             forecasts: null
@@ -59,7 +61,7 @@ export default {
         //    })
         //    .catch((error) => console.log(error))*/
     }
-}
+})
 </script>
 
 <style>
