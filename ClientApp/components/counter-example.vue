@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <h1>Counter</h1>
 
@@ -19,7 +19,7 @@
 <script lang="ts">
   import Vue from 'vue'
   import { mapActions, mapState } from 'vuex'
-  import { MyState } from '../store/types'
+  import { MyState } from '../store/storeTypes'
 
   export default Vue.extend({
   data() {

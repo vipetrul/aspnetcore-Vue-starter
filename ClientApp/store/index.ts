@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { MyState } from './types'
+import { MyState } from './storeTypes'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 // TYPES
 const MAIN_SET_COUNTER = 'MAIN_SET_COUNTER'
