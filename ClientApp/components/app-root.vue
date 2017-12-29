@@ -14,24 +14,24 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import CounterExample from './counter-example.vue'
-import FetchData from './fetch-data.vue'
-import HomePage from './home-page.vue'
-import NavMenu from './nav-menu.vue'
+import Vue from "vue";
+import CounterExample from "./counter-example.vue";
+import FetchData from "./fetch-data.vue";
+import HomePage from "./home-page.vue";
+import NavMenu from "./nav-menu.vue";
 
-Vue.component('counter-example', CounterExample);
-Vue.component('fetch-data', FetchData);
-Vue.component('home-page', HomePage);
-Vue.component('nav-menu', NavMenu);
+Vue.component("counter-example", CounterExample);
+Vue.component("fetch-data", FetchData);
+Vue.component("home-page", HomePage);
+Vue.component("nav-menu", NavMenu);
 
 export default {
-    data() {
-        return {
-        }
-    }
-}
+  data() {
+    return {};
+  }
+};
 </script>
 
 <style>
+
 </style>

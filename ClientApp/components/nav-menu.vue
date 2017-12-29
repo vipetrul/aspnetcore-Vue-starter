@@ -28,33 +28,36 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { routes } from '../routes'
+import Vue from "vue";
+import { routes } from "../routes";
 
-export default Vue.extend ({
-    data() {
-        return {
-            routes,
-            collapsed : true
-        }
-    },
-    methods: {
-        toggleCollapsed: function(event:any){
-            this.collapsed = !this.collapsed;
-        }
+export default Vue.extend({
+  data() {
+    return {
+      routes,
+      collapsed: true
+    };
+  },
+  methods: {
+    toggleCollapsed: function(event: any) {
+      this.collapsed = !this.collapsed;
     }
-})
+  }
+});
 </script>
 
 <style>
-.slide-enter-active, .slide-leave-active {
-  transition: max-height .35s
+.slide-enter-active,
+.slide-leave-active {
+  transition: max-height 0.35s;
 }
-.slide-enter, .slide-leave-to {
+.slide-enter,
+.slide-leave-to {
   max-height: 0px;
 }
 
-.slide-enter-to, .slide-leave {
+.slide-enter-to,
+.slide-leave {
   max-height: 20em;
 }
 </style>

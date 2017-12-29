@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Counter</h1>
+  <h1>Counter</h1>
 
     <p>This is a simple example of a Vue.js component & Vuex</p>
 
@@ -17,43 +17,44 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-  import { mapActions, mapState } from 'vuex'
-  import { MyState } from '../store/storeTypes'
+import Vue from "vue";
+import { mapActions, mapState } from "vuex";
+import { MyState } from "../store/storeTypes";
 
-  export default Vue.extend({
+export default Vue.extend({
   data() {
-    return  {
-            autoCount: 0
-            }
+    return {
+      autoCount: 0
+    };
   },
 
   computed: {
-   ...mapState({
-   currentCount: (state:MyState) => state.counter
-   })
+    ...mapState({
+      currentCount: (state: MyState) => state.counter
+    })
   },
 
   methods: {
-  ...mapActions(['setCounter']),
+    ...mapActions(["setCounter"]),
 
-  incrementCounter: function() {
-  var counter = this.currentCount + 1;
-  this.setCounter({counter: counter});
-  },
-  resetCounter: function() {
-  this.setCounter({counter: 0});
-  this.autoCount = 0;
-  }
+    incrementCounter: function() {
+      var counter = this.currentCount + 1;
+      this.setCounter({ counter: counter });
+    },
+    resetCounter: function() {
+      this.setCounter({ counter: 0 });
+      this.autoCount = 0;
+    }
   },
 
   created() {
-  setInterval(() => {
-  this.autoCount += 1
-  }, 1000)
+    setInterval(() => {
+      this.autoCount += 1;
+    }, 1000);
   }
-  })
+});
 </script>
 
 <style>
+
 </style>
